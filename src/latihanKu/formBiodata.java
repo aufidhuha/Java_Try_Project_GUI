@@ -23,13 +23,13 @@ public class formBiodata extends javax.swing.JFrame {
         reset();
     }
 
-    void reset(){
+    void reset() {
         txtNim.setText(null);
         txtNamaMahasiswa.setText(null);
         cbAgama.setSelectedIndex(0);
         cbJenisKelamin.setSelectedIndex(0);
         cbProgramStudi.setSelectedIndex(0);
-        
+
         labelNimMahasiswa.setText("-");
         labelNamaMahasiswa.setText("-");
         labelAgamaMahasiswa.setText("-");
@@ -37,6 +37,14 @@ public class formBiodata extends javax.swing.JFrame {
         labelProgramStudi.setText("-");
     }
     
+    void clear(){
+        txtNim.setText(null);
+        txtNamaMahasiswa.setText(null);
+        cbAgama.setSelectedIndex(0);
+        cbJenisKelamin.setSelectedIndex(0);
+        cbProgramStudi.setSelectedIndex(0);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -325,18 +333,20 @@ public class formBiodata extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Harap mengisi data secara keseluruhan");
             return;
         }
-        
+
         String nim = txtNim.getText();
         String nama = txtNamaMahasiswa.getText();
         String agama = cbAgama.getSelectedItem().toString();
         String jenisKelamin = cbJenisKelamin.getSelectedItem().toString();
         String programStudi = cbProgramStudi.getSelectedItem().toString();
-        
+
         labelNimMahasiswa.setText(nim);
         labelNamaMahasiswa.setText(nama);
         labelAgamaMahasiswa.setText(agama);
         labelJenisKelamin.setText(jenisKelamin);
         labelProgramStudi.setText(programStudi);
+        
+        clear();
     }//GEN-LAST:event_buttonSimpanActionPerformed
 
     /**
